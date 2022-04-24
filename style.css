@@ -30,3 +30,13 @@ canvas {
 .instagram:hover {
   color: rgba(255, 255, 255);
 }
+
+@media only screen and (max-width: 768px) {
+  .title{
+    font-size: 25px;
+  }
+
+  .instagram{
+    width: 40px;
+  }
+}
