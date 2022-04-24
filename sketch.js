@@ -36,10 +36,8 @@ function setup() {
   
 // Request MIDI access
 if (navigator.requestMIDIAccess) {
-    console.log('This browser supports WebMIDI!');
-
+    console.log('You should definitely try sending me some MIDI messages ehueh');
     navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
-
 } else {
     console.log('WebMIDI is not supported in this browser.');
 }
