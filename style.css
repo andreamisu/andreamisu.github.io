@@ -8,5 +8,13 @@ canvas {
 
 
 .footer{
-  color:yellow
+  position: absolute;
+  color: rgba(255, 255, 255, 0.4);
+  bottom: 5vh;
+  right: 50%;
+  transform: translate(50%, 0);
+  font-family: Lato;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
