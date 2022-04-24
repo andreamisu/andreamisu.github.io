@@ -23,10 +23,10 @@ canvas {
   padding-bottom: 10px;
 }
 
-#instagramlogo{
+.instagram{
   width: 20px;
 }
 
-#instagramlogo:hover {
+.instagram:hover {
   color: rgba(255, 255, 255);
 }
