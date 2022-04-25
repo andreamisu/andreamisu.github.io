@@ -11,7 +11,7 @@ let lock = 0;
 let fontRegular;
 let stringFlag = false;
 let stringBuilder = ["REMEMBER","YOUR","FRIENDS","REMEMBER","WHO","YOU","ARE","REMEMBER","WHO","YOU'VE","BEEN"]
-let stringIndex = 9
+let stringIndex = 0
 let stringMod = 11
 let textShow = true
 
