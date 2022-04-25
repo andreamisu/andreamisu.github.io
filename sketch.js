@@ -7,8 +7,19 @@ let counter = 1000;
 let radiusChange = 0.6
 let counterDiameter = 0
 let alternateColor = 30
-
 let lock = 0;
+let fontRegular;
+let stringFlag = false;
+let stringBuilder = ["REMEMBER","YOUR","FRIENDS","REMEMBER","WHO","YOU","ARE","REMEMBER","WHO","YOU'VE","BEEN"]
+let stringIndex = 9
+let stringMod = 11
+let textShow = true
+
+let modeIndex = 0
+
+function preload() {
+  fontRegular = loadFont('Ladi-Dense.ttf')
+}
 
 const values = {
   DECK_D : 127,
@@ -16,7 +27,6 @@ const values = {
   DECK_B : 127,
   DECK_A :127,
 }
-
 const commands = {
     179 : "DECK_D",
     178: "DECK_C",
@@ -39,6 +49,7 @@ function setup() {
 if (navigator.requestMIDIAccess) {
     console.log('You should definitely try sending me some MIDI messages ehueh');
     navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
+
 } else {
     console.log('WebMIDI is not supported in this browser.');
 }
@@ -85,28 +96,60 @@ function getMIDIMessage(message) {
   }
   
   createCanvas(windowWidth, windowHeight);
- background(0);
+   background(0);
   
   
 }
 
 function touchStarted() {
-  if(alternateColor==30)
+  switch(modeIndex%4){
+    case 0:
       alternateColor = 1
-  else
+      textShow = false
+      break
+    case 1:
+      textShow = true
+      break
+    case 2:
+      textShow = false
       alternateColor=30
+      break
+    case 3:
+      textShow = true
+      break
+  }
+  modeIndex++
 }
 
+
 function draw() {
+  console.log(modeIndex)
   counterDiameter++;
   const sinVariability = sin(counterDiameter/alternateColor)
-  const cosVariability = cos(counterDiameter/30)
+  const cosVariability = cos((counterDiameter)/30)
   const tanVariability = tan(counterDiameter/30)
   diameter = Math.min(width, height) * (radiusChange * abs(sin(counterDiameter/30)));
 
   if(counter<10000)
     counter++;
-  
+  if(sinVariability<0 && !stringFlag){
+      stringIndex++;
+      stringFlag=true;
+  }
+  if(sinVariability>0 && stringFlag){
+    stringFlag=false;
+  }
+  if(textShow){
+      push();
+      textSize(stringIndex%stringMod==10 ? 500 : 100);
+      textAlign(CENTER, CENTER);
+      textFont(fontRegular);
+      fill(255-(values["DECK_A"] * sinVariability*2),255-(values["DECK_B"]* cosVariability*2),255-(values["DECK_C"]* tanVariability*2), map(sinVariability,0,1,0,254));
+      text(stringBuilder[stringIndex%stringMod], width/2, height/2);
+      pop()
+  }
+
+  push()
    noStroke();
    //fill(0,map(counter,0,1000,0,100));
    fill(0,7);
@@ -133,6 +176,6 @@ function draw() {
       );
    }
    endShape();
+   pop()
   
 }
-
