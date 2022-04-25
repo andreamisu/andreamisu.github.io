@@ -23,12 +23,17 @@ canvas {
   padding-bottom: 10px;
 }
 
-.instagram{
+.logo{
   width: 20px;
+  opacity: 0.5;
 }
 
-.instagram:hover {
-  color: rgba(255, 255, 255);
+.logo:hover {
+  opacity: 1;
+}
+
+.linkicon{
+  padding: 0 2px 0 2px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -36,7 +41,7 @@ canvas {
     font-size: 25px;
   }
 
-  .instagram{
+  .logo{
     width: 40px;
   }
 }
