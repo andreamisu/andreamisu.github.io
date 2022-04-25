@@ -79,26 +79,21 @@ function getMIDIMessage(message) {
     var velocity = (message.data.length > 2) ? message.data[2] : 0; // a velocity value might not be included with a noteOff command
   switch(notes[note]){
     case "FADER":
-      //velocityNormalized = map(velocity, 0, 127, 0, height-150);  
-      //values[commands[command]] = velocityNormalized
       if(commands[command] != "DECK_D") {
           values[commands[command]] = velocity*2
       }
       else{
           radiusChange = map(velocity, 0, 127, 0, 1)
       }
-      
       break;
       case "PLAY_CUE":
         counter = 40
     }
   lock=0
   }
-  
+
   createCanvas(windowWidth, windowHeight);
-   background(0);
-  
-  
+  background(0);
 }
 
 function touchStarted() {
@@ -123,7 +118,6 @@ function touchStarted() {
 
 
 function draw() {
-  console.log(modeIndex)
   counterDiameter++;
   const sinVariability = sin(counterDiameter/alternateColor)
   const cosVariability = cos((counterDiameter)/30)
