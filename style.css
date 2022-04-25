@@ -27,7 +27,7 @@ canvas {
   opacity: 0.5;
 }
 
-.insta{
+.insta .github{
   width: 20px;
 }
 
@@ -56,7 +56,7 @@ canvas {
   .email{
     height: 50px;
     width: auto;
-}
+  }
 }
 
 .links{

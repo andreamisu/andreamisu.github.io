@@ -43,6 +43,7 @@ const notes = {
   64: "HI_EQ",
   9: "PLAY_CUE"
 }
+
 function setup() {
   
 // Request MIDI access
