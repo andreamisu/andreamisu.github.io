@@ -6,6 +6,7 @@ let xoff = 0;
 let counter = 1000;
 let radiusChange = 0.6
 let counterDiameter = 0
+let alternateColor = 30
 
 let lock = 0;
 
