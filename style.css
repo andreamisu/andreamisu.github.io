@@ -27,7 +27,11 @@ canvas {
   opacity: 0.5;
 }
 
-.insta .github{
+.insta{
+  width: 20px;
+}
+
+.github{
   width: 20px;
 }
 
