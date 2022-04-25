@@ -90,7 +90,7 @@ function getMIDIMessage(message) {
   
 }
 
-function mouseClicked() {
+function touchStarted() {
   if(alternateColor==30)
       alternateColor = 1
   else

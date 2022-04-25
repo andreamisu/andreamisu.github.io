@@ -24,8 +24,16 @@ canvas {
 }
 
 .logo{
-  width: 20px;
   opacity: 0.5;
+}
+
+.insta{
+  width: 20px;
+}
+
+.email{
+    height: 26px;
+    width: auto;
 }
 
 .logo:hover {
@@ -44,4 +52,15 @@ canvas {
   .logo{
     width: 40px;
   }
+
+  .email{
+    height: 50px;
+    width: auto;
+}
+}
+
+.links{
+  display: flex;
+  align-items: center;
+  flex-direction: initial;
 }
