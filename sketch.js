@@ -89,12 +89,18 @@ function getMIDIMessage(message) {
   
 }
 
+function mouseClicked() {
+  if(alternateColor==30)
+      alternateColor = 1
+  else
+      alternateColor=30
+}
 
 function draw() {
   counterDiameter++;
-  sinVariability = sin(counterDiameter/30)
-  cosVariability = cos(counterDiameter/30)
-  tanVariability = tan(counterDiameter/30)
+  const sinVariability = sin(counterDiameter/alternateColor)
+  const cosVariability = cos(counterDiameter/30)
+  const tanVariability = tan(counterDiameter/30)
   diameter = Math.min(width, height) * (radiusChange * abs(sin(counterDiameter/30)));
 
   if(counter<10000)
