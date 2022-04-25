@@ -18,7 +18,7 @@ let textShow = true
 let modeIndex = 0
 
 function preload() {
-  fontRegular = loadFont('Ladi-Dense.ttf')
+  fontRegular = loadFont('assets/Ladi-Dense.ttf')
 }
 
 const values = {
