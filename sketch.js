@@ -65,11 +65,37 @@ function draw() {
 
   if (capturing) {
     capture.loadPixels()
+
+
+    // let actualWidth = capture.height + (windowWidth-capture.width)
+    // if (capture.pixels) {     
+    //     for (y = 0; y < capture.height; y+=params.pixelSize) {
+    //        for (x = 0; x < capture.width; x+=params.pixelSize) {
+    //       // *4 is for each rgba value
+    //       const index = (x + y * capture.width) * 4
+    //       const r = capture.pixels[index] 
+    //       const g = capture.pixels[index + 1] 
+    //       const b = capture.pixels[index + 2] 
+    //       const a = capture.pixels[index + 3] 
+    //       const bright = Math.round((r + g + b) / 3)                  
+    //       const letter = characters[Math.round(map(bright, 0, 255, characters.length - 1, 0))]
+    //       text(letter, x, y )
+    //     }
+    //   }
+    // }
+
+    let widthPresence = windowWidth - capture.width
     if (capture.pixels) {     
-        for (y = 0; y < capture.height; y+=params.pixelSize) {
-           for (x = 0; x < capture.width; x+=params.pixelSize) {
-          // *4 is for each rgba value
-          const index = (x + y * capture.width) * 4
+      for (y = 0; y < capture.height; y+=params.pixelSize) {
+         for (x = 0; x < windowWidth; x+=params.pixelSize) {
+
+          if(x < widthPresence / 2 || x > capture.width + widthPresence / 2){
+            //black
+            const letter = characters[Math.round(map(0, 0, 255, characters.length - 1, 0))]
+            text(letter, x, y )
+          }
+          // *4 is for each rgba value 
+          const index = ((x - (widthPresence/2)) + y * capture.width) * 4
           const r = capture.pixels[index] 
           const g = capture.pixels[index + 1] 
           const b = capture.pixels[index + 2] 
