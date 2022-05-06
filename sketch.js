@@ -1,6 +1,5 @@
 let aspectFlag = true
-
-counter = 0 
+let cnv
 
 let params = {
   pixelSize:10,
@@ -26,12 +25,10 @@ function getRightCaputreSize(width){
 function setup() {
   
   old_string_foot = string_foot
-  // canvasWidth = windowWidth / 1.5
-  // canvasHeight = windowHeight / 1.5
   canvasWidth = windowWidth 
   canvasHeight = windowHeight 
-  createCanvas(canvasWidth, canvasHeight)
-  
+  cnv = createCanvas(canvasWidth, canvasHeight)
+
   var constraints = {
     video: {
       optional: [{ maxFrameRate: 60 }]
@@ -41,14 +38,11 @@ function setup() {
 
   capture = createCapture(constraints,function(){
       capturing = true
-    console.log('capturing')
-    console.log(this.height)
-    console.log(this.width)
-    let aspectRatio = this.height / this.width
-    //this.size(this.height/2, this.width/2)
+    var x = (windowWidth - this.width) / 2;
+    var y = (windowHeight - this.height) / 2;
+    cnv.position(x, y);
   })
-  // capture.elt.setAttribute('playsinline', '');
-  
+ 
   capture.hide()
  
 }
@@ -80,11 +74,8 @@ function draw() {
           const g = capture.pixels[index + 1] 
           const b = capture.pixels[index + 2] 
           const a = capture.pixels[index + 3] 
-
-          const bright = Math.round((r + g + b) / 3)          
-                    
+          const bright = Math.round((r + g + b) / 3)                  
           const letter = characters[Math.round(map(bright, 0, 255, characters.length - 1, 0))]
-
           text(letter, x, y )
         }
       }

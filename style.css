@@ -78,5 +78,7 @@ canvas {
 
 .footer-ascii{
   font-family: 'VT323';
-  color: green;
+  color: rgb(0,255,0);
+  font-size: 100px;
+  text-shadow: 2px 2px #000000;
 }
