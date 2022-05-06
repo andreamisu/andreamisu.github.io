@@ -92,7 +92,7 @@ function draw() {
           if(x < widthPresence / 2 || x > capture.width + widthPresence / 2){
             //black
             const letter = characters[Math.round(map(255, 0, 255, characters.length - 1, 0))]
-            text(letter, x, y )
+            text(" ", x, y )
           }
           // *4 is for each rgba value 
           const index = ((x - (widthPresence/2)) + y * capture.width) * 4
