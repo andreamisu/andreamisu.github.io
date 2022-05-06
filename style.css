@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'VT323';
+  src: URL('./assets/VT323-Regular.ttf') format('truetype');
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -67,4 +72,11 @@ canvas {
   display: flex;
   align-items: center;
   flex-direction: initial;
+}
+
+
+
+.footer-ascii{
+  font-family: 'VT323';
+  color: green;
 }
