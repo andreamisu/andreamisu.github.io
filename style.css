@@ -30,6 +30,7 @@ canvas {
 
 .logo{
   opacity: 0.5;
+  text-shadow: 2px 2px #000000;
 }
 
 .insta{
@@ -60,6 +61,7 @@ canvas {
 
   .logo{
     width: 40px;
+    text-shadow: 2px 2px #000000;
   }
 
   .email{
