@@ -50,7 +50,7 @@ function setup() {
 function draw() {
   
   
-  
+  scale(windowHeight / capture.height)
   push()
   
   background(0)
