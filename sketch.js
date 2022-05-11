@@ -18,7 +18,7 @@ let capturing = false
 let canvasWidth
 let canvasHeight
 let ratioCapture
-let flagRatio = true
+let flagRatio = false
 
 function getRightCaputreSize(width){
   return width * aspectRatio
@@ -43,6 +43,7 @@ function setup() {
     var x = (windowWidth - this.width) / 2;
     var y = (windowHeight - this.height) / 2;
     cnv.position(x, y);
+    flagRatio = true
   })
  
   capture.hide()
