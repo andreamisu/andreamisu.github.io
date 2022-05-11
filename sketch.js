@@ -49,8 +49,8 @@ function setup() {
 
 function draw() {
   
-  
-  scale(windowHeight / capture.height)
+  ratioHeight = windowHeight / capture.height
+  scale(ratioHeight)
   push()
   
   background(0)
@@ -88,7 +88,7 @@ function draw() {
     if (capture.pixels) {     
       for (y = 0; y < capture.height; y+=params.pixelSize) {
          for (x = 0; x < windowWidth; x+=params.pixelSize) {
-          if(x < widthPresence / 2 || x > capture.width + widthPresence / 2){
+          if(x < widthPresence / (2 * ratioHeight) || x > capture.width + widthPresence / (2 *ratioHeight)){
             //black
             const letter = characters[Math.round(map(255, 0, 255, characters.length - 1, 0))]
             text(" ", x, y )
